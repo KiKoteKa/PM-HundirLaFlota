@@ -1,18 +1,17 @@
 class Position {
     private var posX = 0
-    private var posY = 'A'
+    private var posY = 0
 
-    constructor(posX:Int,posY:Char){
+    constructor(posX:Int,posY:Int){
         this.posX = posX
         this.posY = posY
     }
-
 
     fun getPosX(): Int {
         return posX
     }
 
-    fun getPosY(): Char {
+    fun getPosY(): Int {
         return posY
     }
 
@@ -20,8 +19,12 @@ class Position {
         this.posX = posX;
     }
 
-    fun setPosY(posY:Char){
+    fun setPosY(posY:Int){
         this.posY = posY;
     }
 
+    fun getPosXLetter():Char{
+        val letras = listOf('A','B','C','D','E','F','G','H','I','J','K','L','M')
+        return letras.get(posY)
+    }
 }

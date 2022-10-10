@@ -1,13 +1,13 @@
 class Casilla {
-    private var idBarco:String
+    private var idBarco:Int
     private var posicion:Position
 
-    constructor(idBarco:String,posicion:Position){
+    constructor(idBarco:Int,posicion:Position){
         this.idBarco = idBarco
         this.posicion = posicion
     }
 
-    fun getIdBarco(): String {
+    fun getIdBarco(): Int {
         return idBarco
     }
 
