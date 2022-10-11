@@ -1,3 +1,3 @@
 
-rootProject.name = "PM-HundirLaFlota"
+rootProject.name = "PM-Hundir-la-flota"
 
