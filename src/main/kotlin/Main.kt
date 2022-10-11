@@ -2,7 +2,7 @@ var tableroJugador = Tablero()
 var tableroEnemigo = Tablero()
 
 fun main(args: Array<String>) {
-
+/*
     while(!tableroEnemigo.gameOver() && !tableroJugador.gameOver()) {
         mostrarTableros()
         disparoJugador()
@@ -10,7 +10,7 @@ fun main(args: Array<String>) {
             disparoEnemigo()
         }
     }
-
+*/
     mostrarMensajeFinJuego()
 }
 
@@ -59,4 +59,5 @@ fun disparoEnemigo()
 }
 fun mostrarMensajeFinJuego()
 {
+   //TODO
 }
