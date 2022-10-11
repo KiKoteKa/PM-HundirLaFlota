@@ -38,8 +38,8 @@ class Tablero {
         //Segundo Caso: si hay varco, tocarlo
         //usar el id para marcar el barco como tocado
         //si el barco sigue vivo, decir tocado, decir hundido si no
-        val listCasilla = conBarco.filter { it.getPosicion().getPosY() == pos.getPosY() && it.getPosicion().getPosY() == pos.getPosY() } //filtramos por la posición que disparamos
-        if (!listCasilla.isEmpty()){
+        val listCasilla = conBarco.filter { it.getPosicion().getPosY() == pos.getPosY() && it.getPosicion().getPosX() == pos.getPosX() } //filtramos por la posición que disparamos
+        if (listCasilla.isNotEmpty()){
             val casilla:Casilla = listCasilla.first()
             return tocarBarco(casilla.getIdBarco())
         }
@@ -163,27 +163,27 @@ class Tablero {
     }
 
     fun mostrarTablero(mostrarBarco:Boolean=true){
-        for(i in (0..sizeTablero)){
-            if (i== 0){
-                println("   A  B  C  D  E  F  G  H")
-            }else {
-                var str= "$i "
-                for (j in (1 .. sizeTablero)) {
-                    str += " ${caracterPosicion(Position(i,j),mostrarBarco)} "
-                }
-                println(str)
+        println("   A  B  C  D  E  F  G  H")
+        for(i in (1..sizeTablero)){
+            var str= "$i "
+            for (j in (1 .. sizeTablero)) {
+                str += " ${caracterPosicion(Position(i,j),mostrarBarco)} "
             }
+            println(str)
         }
     }
 
     fun caracterPosicion(pos:Position,mostrarBarco: Boolean):Char{
-        if (disparoEnPos(pos)>0) {
+        if (disparoEnPos(pos)>0 && barcoEnPos(pos) > 0) {
             return '*'
         }
-        if (mostrarBarco && barcoEnPos(pos) > 0 ){
-            return '+'
+        if (disparoEnPos(pos)>0) {
+            return '-'
         }
-        return '-'
+        if (mostrarBarco && barcoEnPos(pos) > 0 ){
+            return '#'
+        }
+        return '/'
     }
 
 }

@@ -6,6 +6,10 @@ class Position {
         this.posX = posX
         this.posY = posY
     }
+    constructor(pos:String){
+        this.posX = pos.get(0).digitToInt()
+        this.posY = getPosXLetter(pos.get(1))
+    }
 
     fun getPosX(): Int {
         return posX
@@ -23,8 +27,13 @@ class Position {
         this.posY = posY;
     }
 
-    fun getPosXLetter():Char{
+    fun getLetterPosX():Char{
         val letras = listOf('A','B','C','D','E','F','G','H','I','J','K','L','M')
         return letras.get(posY)
+    }
+
+    fun getPosXLetter(c:Char):Int{
+        val letras = listOf('A','B','C','D','E','F','G','H','I','J','K','L','M')
+        return letras.indexOf(c)+1
     }
 }
