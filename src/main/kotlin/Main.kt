@@ -1,3 +1,5 @@
+import java.util.*
+
 var tableroJugador = Tablero()
 var tableroEnemigo = Tablero()
 
@@ -66,7 +68,30 @@ fun disparoJugador()
 
 fun disparoEnemigo()
 {
-    //TODO
+    for(i in 1..5) {
+        Thread.sleep(300)
+        print(".")
+    }
+    println()
+    var disparoErroneo = true
+    while(disparoErroneo) {
+        val posX = (1..8).random()
+        val posY = (1..8).random()
+        when (tableroJugador.disparar(Position(posX,posY))){
+            0 -> {
+                println("OH NO HE FALLADO!")
+                disparoErroneo = false
+            }
+            1 -> {
+                println("SII, TOCADO!!")
+                disparoErroneo = false
+            }
+            2 ->{
+                println("WEEEEEEEE HUNDIDO!!!")
+                disparoErroneo = false
+            }
+        }
+    }
 }
 fun mostrarMensajeFinJuego()
 {
