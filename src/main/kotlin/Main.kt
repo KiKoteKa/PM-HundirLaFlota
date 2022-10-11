@@ -23,8 +23,9 @@ fun mostrarTableros()
     println("--------------------------------")
     println("TABLERO ENEMIGO")
     println("--------------------------------")
-    //tableroEnemigo.mostrarTablero(false)
-    tableroEnemigo.mostrarTablero()
+    tableroEnemigo.mostrarTablero(false)
+    //Modo trampas
+    //tableroEnemigo.mostrarTablero()
 }
 
 fun disparoJugador()
@@ -95,5 +96,15 @@ fun disparoEnemigo()
 }
 fun mostrarMensajeFinJuego()
 {
-   //TODO
+    if (tableroJugador.gameOver()){
+        println("*****************************")
+        println("MUAHAHA EL PIRATA MORGAN GANA DE NUEVO, INTENTALO OTRA VEZ")
+        println("*****************************")
+    }else{
+        println("*****************************")
+        println("OH NO, DERROTADO POR UN SIMPLE NIÑO, ENHORABUENA!")
+        println("*****************************")
+    }
+    println( "-----------GAME OVER-----------")
+    println("Gracias por jugar!")
 }
