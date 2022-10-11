@@ -162,26 +162,25 @@ class Tablero {
         numBarcos++
     }
 
-    fun mostrarTablero(){
+    fun mostrarTablero(mostrarBarco:Boolean=true){
         for(i in (0..sizeTablero)){
             if (i== 0){
                 println("   A  B  C  D  E  F  G  H")
             }else {
                 var str= "$i "
                 for (j in (1 .. sizeTablero)) {
-                    str += " ${caracterPosicion(Position(i,j))} "
+                    str += " ${caracterPosicion(Position(i,j),mostrarBarco)} "
                 }
                 println(str)
             }
         }
-
     }
 
-    fun caracterPosicion(pos:Position):Char{
+    fun caracterPosicion(pos:Position,mostrarBarco: Boolean):Char{
         if (disparoEnPos(pos)>0) {
             return '*'
         }
-        if (barcoEnPos(pos) > 0){
+        if (mostrarBarco && barcoEnPos(pos) > 0 ){
             return '+'
         }
         return '-'
